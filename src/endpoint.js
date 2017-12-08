@@ -23,7 +23,7 @@ app.get('/', ( req, res ) => {
   cachedResponse( res, req.url, () => {
     return new Promise( ( resolve ) => {
       resolve( [
-        '/api/edit-trends-week',
+        '/api/trending/edit-trends-week',
         '/api/trending/enwiki/2',
         '/api/trending-debug/enwiki',
         '/api/trending-debug/enwiki/:title',
@@ -33,7 +33,7 @@ app.get('/', ( req, res ) => {
   } );
 } );
 
-app.get( '/api/edit-trends-week', ( req, res ) => {
+app.get( '/api/trending/edit-trends-week', ( req, res ) => {
   cachedResponse( res, req.url, () => {
     const url = `${req.protocol}://${req.get( 'host' )}/api/trending/enwiki/24`;
     return trendingWeek( url );
