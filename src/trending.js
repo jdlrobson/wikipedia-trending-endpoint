@@ -117,7 +117,7 @@ function trending( wiki, halflife, project, title ) {
         item.trendiness > 0;
     };
     if ( !collection ) {
-      reject( 'Trending is disabled for this wiki.' );
+      return reject( 'Trending is disabled for this wiki.' );
     }
 
     visits( lang, project ).then( ( visitedPages ) => {

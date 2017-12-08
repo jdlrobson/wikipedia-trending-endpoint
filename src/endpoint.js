@@ -39,14 +39,6 @@ app.get( '/api/trending/edit-trends-week', ( req, res ) => {
     return trendingWeek( url );
   } );
 } );
-app.get( '/api/trending/:wiki/:halflife', ( req, res ) => {
-  var wiki = req.params.wiki;
-  var halflife = parseFloat( req.params.halflife );
-
-  cachedResponse( res, req.url, () => {
-    return trending( wiki, halflife, DEFAULT_PROJECT );
-  } );
-} )
 
 app.get( '/api/trending/debug/:wiki/:title?', ( req, res ) => {
   cachedResponse( res, req.url, () => {
@@ -57,7 +49,16 @@ app.get( '/api/trending/debug/:wiki/:title?', ( req, res ) => {
       return trendingDebug( req.params.wiki );
     }
   } );
-} )
+} );
+
+app.get( '/api/trending/:wiki/:halflife', ( req, res ) => {
+  var wiki = req.params.wiki;
+  var halflife = parseFloat( req.params.halflife );
+
+  cachedResponse( res, req.url, () => {
+    return trending( wiki, halflife, DEFAULT_PROJECT );
+  } );
+} );
 
 app.listen( app.get( 'port' ) )
 console.info( '==> Go to http://localhost:%s', app.get( 'port' ) )
