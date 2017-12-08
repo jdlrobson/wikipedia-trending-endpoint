@@ -26,7 +26,8 @@ app.get('/', ( req, res ) => {
         '/api/edit-trends-week',
         '/api/trending/enwiki/2',
         '/api/trending-debug/enwiki',
-        '/api/trending-debug/enwiki/:title'
+        '/api/trending-debug/enwiki/:title',
+        'https://github.com/jdlrobson/wikipedia-trending-endpoint'
       ] );
     } )
   } );
