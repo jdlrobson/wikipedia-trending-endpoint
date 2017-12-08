@@ -25,8 +25,8 @@ app.get('/', ( req, res ) => {
       resolve( [
         '/api/trending/edit-trends-week',
         '/api/trending/enwiki/2',
-        '/api/trending-debug/enwiki',
-        '/api/trending-debug/enwiki/:title',
+        '/api/trending/debug/enwiki',
+        '/api/trending/debug/enwiki/:title',
         'https://github.com/jdlrobson/wikipedia-trending-endpoint'
       ] );
     } )
@@ -48,7 +48,7 @@ app.get( '/api/trending/:wiki/:halflife', ( req, res ) => {
   } );
 } )
 
-app.get( '/api/trending-debug/:wiki/:title?', ( req, res ) => {
+app.get( '/api/trending/debug/:wiki/:title?', ( req, res ) => {
   cachedResponse( res, req.url, () => {
     if ( req.params.title ) {
       // TODO: use trendingDebug
