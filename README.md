@@ -12,7 +12,7 @@
 # Collecting weekly data:
 If you want to collate trending topics over the course of a week period you'll need to setup a cronjob to occur every 12hrs.
 
-	wget https://trending.wmflabs.org/api/edit-trends-week?
+	0 */12 * * * wget <your host>/api/trending/edit-trends-week? -O /dev/null
 
 # TODO
 When something trends we need to send an event that other services can subscribe to via a websocket.
