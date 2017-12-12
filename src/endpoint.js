@@ -1,4 +1,5 @@
 import express from 'express'
+import cors from 'cors'
 
 import cachedResponse from './cached-response'
 import trending from './trending'
@@ -11,6 +12,7 @@ const DEFAULT_PROJECT = 'wikipedia';
 // Express
 const app = express()
 
+app.use(cors())
 app.set( 'port', ( APP_PORT ) )
 
 /*
@@ -51,7 +53,7 @@ app.get( '/api/trending/debug/:wiki/:title?', ( req, res ) => {
   } );
 } );
 
-app.get( '/api/trending/:wiki/:halflife', ( req, res ) => {
+app.get( '/api/trending/:wiki/:halflife', cors(), ( req, res ) => {
   var wiki = req.params.wiki;
   var halflife = parseFloat( req.params.halflife );
 
