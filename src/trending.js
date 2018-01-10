@@ -114,7 +114,7 @@ function trending( wiki, halflife, project, title ) {
         item.contributors.length + item.anons.length > 2 && ( wiki === '*' || item.wiki === wiki ) &&
         significantBytesChange( item.bytesChanged ) &&
       ( item.age() / 60 ) < ( halflife * 2 ) &&
-        item.trendiness > 0;
+        item.trendiness >= 0;
     };
     if ( !collection ) {
       return reject( 'Trending is disabled for this wiki.' );
