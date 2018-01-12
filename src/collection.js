@@ -3,12 +3,13 @@ import WikiSocketCollection from 'wikitrender'
 const project = process.env.PROJECT || 'wikipedia';
 const collections = {};
 
-const ONE_DAY = ( 60 * 24 ) * 24;
+const ONE_HOUR = 60;
+const ONE_DAY = ONE_HOUR * 24;
 
 collections.en = new WikiSocketCollection( {
   id: 'mysocket',
   project: 'en.' + project + '.org',
-  minPurgeTime: ONE_DAY,
+  minPurgeTime: ONE_HOUR * 12,
   maxLifespan: ONE_DAY,
   maxInactivity: ONE_DAY,
   minSpeed: 0.05
