@@ -4,19 +4,29 @@ const ENT = 'tv/movie';
 const EVENT = 'event';
 const POLITICS = 'politics';
 const AWARDS = 'awards';
+const SPORTS = 'sports';
+const TECH = 'tech';
 
 function categoriesToTags( pages ) {
   const keywords = {
+    '(band)': ENT,
+    'musical groups': ENT,
     actors: 'film',
+    'song contest': ENT,
+    'television series': ENT,
+    'operating systems': TECH,
     deaths: 'death',
+    cricket: SPORTS,
+    novelists: ENT,
     wrestling: 'wrestling',
     // e.g. Time person of the year
     'annual magazine': 'publication',
     'current wildfires': 'wildfire',
     events: 'event',
-    sports: 'sports',
+    sports: SPORTS,
     royalty: 'monarchy',
-    motorsport: 'sports',
+    motorsport: SPORTS,
+    'association football': SPORTS,
     scandals: 'scandal',
     controversies: 'scandal',
     'cabinet members': POLITICS,
@@ -29,10 +39,10 @@ function categoriesToTags( pages ) {
     winners: AWARDS,
     'video games': ENT,
     'game franchises': ENT,
-    'football players': 'sports',
-    'football coaches': 'sports',
+    'football players': SPORTS,
+    'football coaches': SPORTS,
     ' videos': 'entertainment',
-    'baseball players': 'sports',
+    'baseball players': SPORTS,
     '–present': EVENT,
     'category:leaders': POLITICS,
     'television seasons': ENT,
