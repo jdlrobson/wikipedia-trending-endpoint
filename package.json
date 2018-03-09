@@ -13,11 +13,12 @@
     "babel-preset-es2015": "^6.24.1",
     "cors": "^2.8.4",
     "express": "^4.16.2",
+    "morgan": "^1.9.0",
     "node-cache": "^4.1.1",
     "oauth-fetch-json": "^0.3.2",
     "pageviews": "^1.3.4",
     "wikily-edit-trends": "github:jdlrobson/wikily-edit-trends",
     "wikipedia-edits-scorer": "^1.5.9",
-    "wikitrender": "github:jdlrobson/wikitrender"
+    "wikitrender": "^1.0.1"
   }
 }

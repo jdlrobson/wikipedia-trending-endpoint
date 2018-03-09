@@ -1,5 +1,6 @@
 import express from 'express'
 import cors from 'cors'
+import morgan from 'morgan'
 
 import cachedResponse from './cached-response'
 import trending from './trending'
@@ -13,6 +14,7 @@ const DEFAULT_PROJECT = 'wikipedia';
 const app = express()
 
 app.use(cors())
+app.use(morgan('tiny'));
 app.set( 'port', ( APP_PORT ) )
 
 /*
