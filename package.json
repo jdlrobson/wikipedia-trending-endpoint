@@ -19,6 +19,6 @@
     "pageviews": "1.3.4",
     "wikily-edit-trends": "github:jdlrobson/wikily-edit-trends",
     "wikipedia-edits-scorer": "1.5.9",
-    "wikitrender": "1.1.0"
+    "wikitrender": "^1.2.0"
   }
 }
